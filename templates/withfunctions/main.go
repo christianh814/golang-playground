@@ -42,7 +42,7 @@ var fm = template.FuncMap{
 
 // Parse the tempalte file and check for errors (.Must)
 func init() {
-	tpl = template.Must(template.New("").Funcs(fm).ParseFiles("templates/tpl.gohtml"))
+	tpl = template.Must(template.New("").Funcs(fm).ParseFiles("tpl.gohtml"))
 }
 
 func firstThree(s string) string {
@@ -88,7 +88,7 @@ func main() {
 		Transport: cars,
 	}
 	// Execute the template and print to standard out, replacing occcurances of "{{.}}" in "tpl.gohtml" with the values
-	err := tpl.ExecuteTemplate(os.Stdout, "templates/tpl.gohtml", data)
+	err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", data)
 
 	// Print any errors if there were any
 	if err != nil {
